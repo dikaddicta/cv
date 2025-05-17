@@ -60,6 +60,7 @@ $(window).on('load', function() {
           // options
           itemSelector: '[class*="col-"]',
           percentPosition: true,
+          filter: '.Schematic', // Tampilkan hanya .Schematic saat pertama load
           masonry: {
               // use element for option
               columnWidth: '[class*="col-"]'
