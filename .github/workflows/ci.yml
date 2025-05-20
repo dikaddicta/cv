@@ -1,0 +1,12 @@
+name: CI Build Test
+
+on: [push]  # Akan berjalan saat kamu melakukan push ke repo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Gunakan shared runner GitHub
+
+    steps:
+      - uses: actions/checkout@v3  # Clone kode dari repo
+      - name: Jalankan Tes
+        run: echo "Halo! Workflow berhasil dijalankan."
