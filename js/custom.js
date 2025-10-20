@@ -374,7 +374,22 @@ $(function(){
         $submenu.parent().toggleClass("openmenu");
     });
 
-    
+    // ==== Gallery Scroll Buttons ====
+    document.addEventListener("DOMContentLoaded", function () {
+      const scrollContainer = document.getElementById("galleryScroll");
+      const btnLeft = document.getElementById("scrollLeft");
+      const btnRight = document.getElementById("scrollRight");
+
+      if (scrollContainer && btnLeft && btnRight) {
+        btnLeft.addEventListener("click", () => {
+          scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
+        });
+
+        btnRight.addEventListener("click", () => {
+          scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+        });
+      }
+    });
 
     /*=========================================================================
             Scroll to Top
@@ -392,22 +407,5 @@ $(function(){
             scrollTop : 0                       // Scroll to top of body
         }, 400);
     });
-
-    // ==== Gallery Scroll Buttons ====
-$(function () {
-  const scrollContainer = document.getElementById("galleryScroll");
-  const btnLeft = document.getElementById("scrollLeft");
-  const btnRight = document.getElementById("scrollRight");
-
-  if (scrollContainer && btnLeft && btnRight) {
-    btnLeft.addEventListener("click", () => {
-      scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
-    });
-
-    btnRight.addEventListener("click", () => {
-      scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
-    });
-  }
-});
 
 });
