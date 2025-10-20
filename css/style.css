@@ -2239,23 +2239,29 @@ body.dark footer.footer {
   width: 10px;
 }
 
-/* === Certificate Section Spacing Fix === */
+/* ================================
+   FIX CERTIFICATE SECTION LAYOUT
+   ================================ */
+
 #testimonials .row {
-  row-gap: 30px; /* beri jarak antar baris */
-}
-
-/* Jarak antar item sertifikat */
-#testimonials .col-md-4 {
-  margin-bottom: 30px;
-  padding: 10px;
-}
-
-/* Konsistensi tampilan tiap item */
-#testimonials .portfolio-item {
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between; /* rata kanan kiri */
+  gap: 20px; /* jarak antar item */
+  margin: 0 auto;
+  max-width: 1200px; /* agar konten di tengah */
+}
+
+#testimonials .col-md-4 {
+  flex: 1 1 calc(33.333% - 20px); /* 3 kolom lebih lebar */
+  max-width: calc(33.333% - 20px);
+  margin: 0;
+}
+
+#testimonials .portfolio-item {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
@@ -2263,66 +2269,18 @@ body.dark footer.footer {
   transform: translateY(-5px);
 }
 
-/* Thumbnail gambar */
 #testimonials .thumb img {
-  border-radius: 15px;
   width: 100%;
   height: auto;
-  object-fit: cover;
-}
-
-/* Detail sertifikat */
-#testimonials .details {
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-/* ===== FIX CERTIFICATE GRID SPACING ===== */
-#testimonials .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px; /* jarak antar item horizontal & vertikal */
-  justify-content: center;
-}
-
-#testimonials .col-md-4 {
-  flex: 1 1 calc(33.333% - 30px); /* 4 kolom di desktop */
-  max-width: calc(33.333% - 30px);
-  margin: 0; /* hapus margin lama */
+  border-radius: 12px;
+  object-fit: contain;
 }
 
 @media (max-width: 992px) {
   #testimonials .col-md-4 {
-    flex: 1 1 calc(50% - 30px); /* 2 kolom di tablet */
-    max-width: calc(50% - 30px);
+    flex: 1 1 calc(100% - 20px); /* satu kolom di tablet */
+    max-width: calc(100% - 20px);
   }
-}
-
-@media (max-width: 576px) {
-  #testimonials .col-md-4 {
-    flex: 1 1 100%; /* 1 kolom di HP */
-    max-width: 100%;
-  }
-}
-
-/* agar gambar konsisten */
-#testimonials .thumb img {
-  width: 100%;
-  height: 220px; /* tinggi seragam */
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* jarak antar item lebih halus */
-#testimonials .portfolio-item {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-
-#testimonials .portfolio-item:hover {
-  transform: translateY(-5px);
 }
 
 /*=================================================================*/
