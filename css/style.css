@@ -2287,9 +2287,14 @@ body.dark footer.footer {
 /*                      GALLERY SCROLL SECTION                     
 /*=================================================================*/
 
+#gallery {
+  overflow: hidden;
+}
+
 #gallery .gallery-scroll {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   gap: 20px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -2324,6 +2329,10 @@ body.dark footer.footer {
 #gallery .gallery-scroll {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+#gallery .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /*=================================================================*/
