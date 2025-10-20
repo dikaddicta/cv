@@ -2276,6 +2276,54 @@ body.dark footer.footer {
   padding-bottom: 10px;
 }
 
+/* ===== FIX CERTIFICATE GRID SPACING ===== */
+#testimonials .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* jarak antar item horizontal & vertikal */
+  justify-content: center;
+}
+
+#testimonials .col-md-3 {
+  flex: 1 1 calc(25% - 30px); /* 4 kolom di desktop */
+  max-width: calc(25% - 30px);
+  margin: 0; /* hapus margin lama */
+}
+
+@media (max-width: 992px) {
+  #testimonials .col-md-3 {
+    flex: 1 1 calc(50% - 30px); /* 2 kolom di tablet */
+    max-width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 576px) {
+  #testimonials .col-md-3 {
+    flex: 1 1 100%; /* 1 kolom di HP */
+    max-width: 100%;
+  }
+}
+
+/* agar gambar konsisten */
+#testimonials .thumb img {
+  width: 100%;
+  height: 220px; /* tinggi seragam */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* jarak antar item lebih halus */
+#testimonials .portfolio-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+#testimonials .portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
 /*=================================================================*/
 /*                      RESPONSIVE SETTINGS
 /*=================================================================*/
