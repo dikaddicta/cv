@@ -2412,6 +2412,21 @@ body.dark footer.footer {
   scrollbar-width: none;
 }
 
+#galleryScroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+#galleryScroll img {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#galleryScroll img:hover {
+  transform: scale(1.05);
+}
+
 /*=================================================================*/
 /*                      RESPONSIVE SETTINGS
 /*=================================================================*/
